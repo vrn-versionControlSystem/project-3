@@ -3,12 +3,12 @@ import './Header.css';
 import logo from '../../assets/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { FiPhone } from 'react-icons/fi';
 import { IoCallOutline } from 'react-icons/io5';
 import { RiBankCardLine } from 'react-icons/ri';
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import { FaWhatsapp } from 'react-icons/fa';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 
 
@@ -51,10 +51,10 @@ const Header = () => {
                         <div className='col-12 header-col-8-row-col-121'>
                             <ul>
                                 <li>Skip to main content</li>
-                                <li><FiPhone size={24} className='font-icon' /> 08363507100</li>
+                                <li><FontAwesomeIcon icon={faWhatsapp} className='font-icon' />:<FiPhone size={24} className='font-icon' /> 08363507100</li>
                                 <li><FontAwesomeIcon icon={faPhone} className='font-icon' /> 18008906766</li>
                                 <li> <RiBankCardLine className='font-icon' />Block ATM Card: 18001030 & 18004250018</li>
-                                <li><button>AMALGAMATION</button></li>
+                                <li><button className='B'>AMALGAMATION</button></li>
 
                             </ul>
 
@@ -62,12 +62,12 @@ const Header = () => {
                         </div>
                         <div className='col-12 header-col-8-row-col-122'>
                             <ul>
-                                <li><Link to='/'> Home</Link></li>
-                                <li><Link to='/'> About us</Link></li>
-                                <li><Link to='/'> Banking Products</Link></li>
-                                <li><Link to='/'> E-Services</Link></li>
-                                <li><Link to='/'>Customer Care</Link></li>
-                                <li><Link to='/'> <button>Internet Banking</button></Link><Link to='/'> <button>CUSTOMER GRIEVANCE</button></Link></li>
+                                <li><NavLink to='/'> Home</NavLink></li>
+                                <li><NavLink to='/about'> About us</NavLink></li>
+                                <li><NavLink to='/bankingproduct'> Banking Products</NavLink></li>
+                                <li><NavLink to='/eservice'> E-Services</NavLink></li>
+                                <li><NavLink to='/customercare'>Customer Care</NavLink></li>
+                                <li><NavLink to='/internetbanking'> <button className='B1'>INTERNET BANKING</button></NavLink><NavLink to='/customergrievance'> <button className='B2'>CUSTOMER GRIEVANCE</button></NavLink></li>
                             </ul>
 
 

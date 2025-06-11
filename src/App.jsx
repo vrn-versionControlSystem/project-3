@@ -1,24 +1,32 @@
-import { Route, Router } from 'react-router'
+import { Route, Routes } from 'react-router'
 import './App.css'
 import Header from './component/Header/Header'
 import Home from './component/Home/Home'
+
+import Products from './component/Bankin_Products/Products'
+import About from './component/About/About'
+import Eservices from './component/Eservices/Eservices'
+import CustomerCare from './component/Customer/CustomerCare'
+import InternetBanking from './component/InternetBaking/InternetBanking'
+import CustomerGrievace from './component/CustomerGrievace/CustomerGrievace'
+import Footer from './component/Footer/Footer'
 
 function App() {
 
   return (
     <>
       <Header />
-      <Router>
+      <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/' element={<Home />} />
-        <Route path='/' element={<Home />} />
-        <Route path='/' element={<Home />} />
-        <Route path='/' element={<Home />} />
-        <Route path='/' element={<Home />} />
-        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/bankingproduct' element={<Products />} />
+        <Route path='/eservice' element={<Eservices />} />
+        <Route path='/customercare' element={<CustomerCare />} />
+        <Route path='/internetbanking' element={<InternetBanking />} />
+        <Route path='/customergrievance' element={<CustomerGrievace />} />
 
-      </Router>
-
+      </Routes>
+      <Footer />
     </>
   )
 }
