@@ -1,10 +1,24 @@
+import { Route, Router } from 'react-router'
 import './App.css'
+import Header from './component/Header/Header'
+import Home from './component/Home/Home'
 
 function App() {
 
   return (
     <>
-      <h1>Hello</h1>
+      <Header />
+      <Router>
+        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home />} />
+
+      </Router>
+
     </>
   )
 }
