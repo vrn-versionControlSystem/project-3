@@ -10,6 +10,7 @@ import CustomerCare from './component/Customer/CustomerCare'
 import InternetBanking from './component/InternetBaking/InternetBanking'
 import CustomerGrievace from './component/CustomerGrievace/CustomerGrievace'
 import Footer from './component/Footer/Footer'
+import Main from './component/Main/Main.jsx'
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Main />} />
         <Route path='/about' element={<About />} />
         <Route path='/bankingproduct' element={<Products />} />
         <Route path='/eservice' element={<Eservices />} />
