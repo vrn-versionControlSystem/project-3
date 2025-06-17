@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { use, useState } from 'react'
 import './Header.css';
 import logo from '../../assets/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,17 +9,95 @@ import { RiBankCardLine } from 'react-icons/ri';
 import { Link, NavLink } from 'react-router';
 import { FaWhatsapp } from 'react-icons/fa';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { ThemeContext } from '../DarkLight/DarkLight';
+import Navegation from './Navegation/Navegation';
+import { MdKeyboardArrowDown } from 'react-icons/md';
+import { IoIosArrowUp } from 'react-icons/io';
+import { Button } from 'reactstrap';
 
 
 
 
 const Header = () => {
+
+    const { theme, toggleMoonSun } = use(ThemeContext);
+
+    const [subMenuIndex, setSubMenuIndex] = useState(null);
+
+    const menuItem = [
+        {
+            title: 'Home',
+            link: '/'
+
+        },
+        {
+            title: 'About',
+            link: '/about'
+
+        },
+        {
+            title: 'Services',
+            submenu: [
+                {
+                    title: 'service1',
+                    link: '/service/1'
+
+                },
+                {
+                    title: 'service2',
+                    link: '/service/2'
+
+                },
+                {
+                    title: 'Service3',
+                    link: '/service/3'
+
+                },
+            ]
+
+        },
+        {
+            title: 'Product',
+            submenu: [
+                {
+                    title: 'service1',
+                    link: '/service/1'
+
+                },
+                {
+                    title: 'service2',
+                    link: '/service/2'
+
+                },
+                {
+                    title: 'Service3',
+                    link: '/service/3'
+
+                },
+            ]
+
+        },
+        {
+            title: 'Contact us',
+            link: '/contactus'
+
+        },
+    ];
+
+    const [isOpen, setIsOpen] = useState(true);
+
+    const menuToggle = () => {
+        setIsOpen(!isOpen);
+
+
+    }
+
     return (
 
         <div className='container-fluid header-container-fluid'>
 
             <div className='row header-row'>
-                <div className='col-lg-4 header-col-4'>
+                <div className={theme === 'dark' ? 'col-lg-4 header-col-4-dark' : 'col-lg-4 header-col-4-light'}>
 
                     <div className='header-col-4-div-img'>
                         <img src={logo} alt='logo' />
@@ -35,7 +113,7 @@ const Header = () => {
                         <p>Tal.- Jat, Dist.- Sangli</p>
                     </div>
 
-                    <div className='menu'>
+                    <div className='menu' onClick={menuToggle}>
                         <div className='menu-icon'></div>
                         <div className='menu-icon'></div>
                         <div className='menu-icon'></div>
@@ -44,14 +122,16 @@ const Header = () => {
 
                 </div>
                 {/*---------------------------------------------------------------------------------------------*/}
-                <div className='col-8 header-col-8'>
+
+
+                <div className={isOpen ? 'col-8 header-col-8' : 'header-col-8-isOpen'}>
 
 
                     <div className='row header-col-8-row'>
-                        <div className='col-12 header-col-8-row-col-121'>
+                        <div className={isOpen ? 'col-12 header-col-8-row-col-121' : 'col-12 header-col-8-row-col-121-isOpen'}  >
                             <ul>
                                 <li>Skip to main content</li>
-                                <li><FontAwesomeIcon icon={faWhatsapp} className='font-icon' />:<FiPhone size={24} className='font-icon' /> 08363507100</li>
+                                <li><FontAwesomeIcon icon={faWhatsapp} className='font-icon' /> 08363507100</li>
                                 <li><FontAwesomeIcon icon={faPhone} className='font-icon' /> 18008906766</li>
                                 <li> <RiBankCardLine className='font-icon' />Block ATM Card: 18001030 & 18004250018</li>
                                 <li><button className='B'>AMALGAMATION</button></li>
@@ -60,16 +140,36 @@ const Header = () => {
 
 
                         </div>
-                        <div className='col-12 header-col-8-row-col-122'>
-                            <ul>
-                                <li><NavLink to='/'> Home</NavLink></li>
-                                <li><NavLink to='/about'> About us</NavLink></li>
-                                <li><NavLink to='/bankingproduct'> Banking Products</NavLink></li>
-                                <li><NavLink to='/eservice'> E-Services</NavLink></li>
-                                <li><NavLink to='/customercare'>Customer Care</NavLink></li>
-                                <li><NavLink to='/internetbanking'> <button className='B1'>INTERNET BANKING</button></NavLink><NavLink to='/customergrievance'> <button className='B2'>CUSTOMER GRIEVANCE</button></NavLink></li>
-                            </ul>
+                        <div className={isOpen ? 'col-12 header-col-8-row-col-122-light' : 'col-12 header-col-8-row-col-122-light-isOpen'}  >
 
+                            <ul className='outer'>
+                                {
+                                    menuItem.map((item, index) => {
+                                        return (<li key={index}>{item.link ? (<Link to={item.link}><li>{item.title}</li> </Link>) : (<li className='submenu-li' onClick={() => setSubMenuIndex(subMenuIndex === index ? null : index)}>{item.title} {subMenuIndex === index ? <IoIosArrowUp /> : <MdKeyboardArrowDown />}</li>)}
+                                            {
+                                                subMenuIndex === index && (<ul className='inner'>
+                                                    {
+                                                        item.submenu.map((subItem, subIndex) => {
+                                                            return (<li key={subIndex}><Link to={subItem.link}>{subItem.title}</Link> </li>)
+                                                        })
+                                                    }
+                                                </ul>)
+                                            }
+
+                                        </li>
+                                        )
+                                    })
+
+                                }
+
+
+
+                            </ul>
+                            <div className='col-lg two-button'>
+                                <button className='B1'>INTERNET BANKING</button>
+                                <button className='B2'>CUSTOMER GRIEVANCE</button>
+
+                            </div>
 
 
                         </div>
@@ -86,7 +186,7 @@ const Header = () => {
 
 
 
-        </div>
+        </div >
     )
 }
 

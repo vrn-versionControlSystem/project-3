@@ -1,0 +1,44 @@
+.setting{
+    background-color:white;
+    color:var(--main-color) ;
+    font-size: 40px;
+    position: fixed;
+    top:15rem;
+    right: 0px;
+}
+.setting:hover{
+    background-color:var(--main-color);
+    color:white ;
+    font-size: 50px;
+    position: fixed;
+    top:15rem;
+    right: 0px;
+    cursor: pointer;
+}
+
+.moon{
+   
+    font-size: 25px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.sun{
+   
+    font-size: 25px;
+    margin-left: 30px;
+    border-radius: 15px;
+     cursor: pointer;
+
+}
+
+
+.theme{
+    background-color: white;
+    border: 1px solid var(--main-color);
+    width: 4%;
+    height: 30px;
+    margin-left: 1445px;
+    position: fixed;
+    border-radius: 10px;
+}

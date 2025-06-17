@@ -1,9 +1,13 @@
-import React from 'react';
-import './About.css';
+import React from 'react'
+import Navegation from '../Header/Navegation/Navegation.jsx'
 
 const About = () => {
     return (
-        <div>About</div>
+        <div>
+
+            <Navegation />
+
+        </div>
     )
 }
 

@@ -3,33 +3,17 @@ import './Home.css';
 
 const Home = () => {
     return (
-        <div className='container-fluid home-container-fluid'>
-            <div className='row home-row1'>
-                <div className='col-lg home-row1-col1'>
-                    Home
+        <>
+            <div className='main'>
+                <div className='menu'>
+                    <h1>WELCOME TO HOME</h1>
+                    <p>Here i am using HTML and CSS to create website and for react js libraries to create single page rendering.</p>
                 </div>
-                <div className='col-lg home-row1-col2'>
-                    Home
-                </div>
-                <div className='col-lg home-row1-col3'>
-                    Home
-                </div>
-                <div className='col-lg home-row1-col4'>
-                    Home
-                </div>
-                <div className='col-lg home-row1-col5'>
-                    Home
-                </div>
-
             </div>
 
 
 
-
-
-
-
-        </div>
+        </>
     )
 }
 
