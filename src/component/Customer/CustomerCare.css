@@ -1,0 +1,79 @@
+.CustomerCare{
+    background-color: rgb(222, 234, 245);
+   
+    
+   
+}
+.CustomerCare-dark{
+    background-color: black;
+    height: 700px;
+
+   
+}
+.div1{
+background-color: rgb(222, 234, 245);
+ height: 700px;
+}
+.div1-dark{
+background-color:black;
+color: white;
+ height: 700px;
+border: 1px solid green;
+}
+
+
+.div2{
+    display: block;
+}
+.div3{
+    display: flex;
+    
+    
+}
+.div31{
+
+    background-color: white;
+
+}
+.div32{
+    
+      text-align: left;  
+  margin: 10px;
+}
+.div32 p, h4{
+     text-align: justify;
+    
+     padding: 5px;
+     line-height: 26px;
+     font-family: 'Poppins';
+    
+}
+
+.div33{
+   
+      margin-left: 200px;
+}
+.div33 p, h4{
+     text-align: justify;
+
+     padding: 5px;
+     line-height: 26px;
+     font-family: 'Poppins';
+    
+}
+
+@media (max-width:800px) {
+.div2{
+    width: 100%;
+}
+ .div31{
+    width: 100%;
+}
+ .div32{
+    width: 100%;
+}
+ .div33{
+    width: 100%;
+    text-align: center;
+}   
+}

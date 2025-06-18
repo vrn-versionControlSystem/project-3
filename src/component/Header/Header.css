@@ -143,10 +143,12 @@
 }
 /*------------------------------------------------------------------header end*/
 
+
+
 /*------------------------------------------------------------------header menu*/
 .outer{
 
-    width: 60%;
+    width: 70%;
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -201,7 +203,10 @@
     color: white;
     font-weight: bold;
     border: none;
-
+  
+     
+      
+      
 }
 .submenu-li:hover:after{
     width: 15%;
@@ -231,31 +236,20 @@
 .outer button{
     position: absolute;
 }
+
 .outer ul{
  
     position: absolute;
-    top: 60px;
+    top: 50px;
     background-color: white;
     list-style: none;
 }
+
 .inner{
     
     border: 1px solid black;
 }
-.inner::after{
-    content: '';
-    position: absolute;
-    left: 0;
-    height: 5px;
-    width: 0;
-    bottom: 15px;
-    transition: width 0.3s ease-in-out;
 
-}
-.inner:hover:after{
-  
-width: 100%;
-}
 
 .header-col-8-row-col-122-light{
 height: 45px;
@@ -316,10 +310,16 @@ align-items: center;
 
 /**************************************/
 .B1{
+    font-size: 12px;
+    font-weight: normal;
     margin: 5px;
     padding: 5px;
+    width: 30%;
 }
 .B2{
+    font-size: 12px;
+    font-weight: normal;
+    width: 30%;
     margin: 5px;
     padding: 5px;
 }

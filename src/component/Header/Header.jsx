@@ -36,42 +36,97 @@ const Header = () => {
 
         },
         {
-            title: 'Services',
+            title: 'E-Services',
             submenu: [
                 {
-                    title: 'service1',
+                    title: 'Mobile Banking',
                     link: '/service/1'
 
                 },
                 {
-                    title: 'service2',
+                    title: 'Internet Banking',
                     link: '/service/2'
 
                 },
                 {
-                    title: 'Service3',
+                    title: 'UPI : instant mobile payments',
                     link: '/service/3'
 
                 },
+                {
+                    title: 'Missed Call Alerts',
+                    link: '/service/4'
+
+                },
+                {
+                    title: 'Positive Pay',
+                    link: '/service/5'
+
+                },
+                {
+                    title: 'Instant Debit Card',
+                    link: '/service/6'
+
+                },
+                {
+                    title: 'Request new Cheque Book',
+                    link: '/service/7'
+
+                },
+                {
+                    title: 'Request stop Cheque',
+                    link: '/service/8'
+
+                },
+                {
+                    title: 'Request New ATM Card',
+                    link: '/service/9'
+
+                },
+                {
+                    title: 'Kisan Credit Card',
+                    link: '/service/10'
+
+                },
+                {
+                    title: 'Ecommerce Transaction',
+                    link: '/service/11'
+
+                }
             ]
 
         },
         {
-            title: 'Product',
+            title: 'Banking Product',
             submenu: [
                 {
-                    title: 'service1',
+                    title: 'Saving Products',
                     link: '/service/1'
 
                 },
                 {
-                    title: 'service2',
+                    title: 'Deposit Schemes',
                     link: '/service/2'
 
                 },
                 {
-                    title: 'Service3',
+                    title: 'Loan Products',
                     link: '/service/3'
+
+                },
+                {
+                    title: 'Financial Inclusion',
+                    link: '/service/4'
+
+                },
+                {
+                    title: 'Insurance',
+                    link: '/service/5'
+
+                },
+                {
+                    title: 'NPS/ NPS Vatsalya',
+                    link: '/service/6'
 
                 },
             ]
@@ -79,7 +134,7 @@ const Header = () => {
         },
         {
             title: 'Contact us',
-            link: '/contactus'
+            link: '/customercare'
 
         },
     ];
@@ -145,18 +200,30 @@ const Header = () => {
                             <ul className='outer'>
                                 {
                                     menuItem.map((item, index) => {
-                                        return (<li key={index}>{item.link ? (<Link to={item.link}><li>{item.title}</li> </Link>) : (<li className='submenu-li' onClick={() => setSubMenuIndex(subMenuIndex === index ? null : index)}>{item.title} {subMenuIndex === index ? <IoIosArrowUp /> : <MdKeyboardArrowDown />}</li>)}
-                                            {
-                                                subMenuIndex === index && (<ul className='inner'>
-                                                    {
-                                                        item.submenu.map((subItem, subIndex) => {
-                                                            return (<li key={subIndex}><Link to={subItem.link}>{subItem.title}</Link> </li>)
-                                                        })
-                                                    }
-                                                </ul>)
-                                            }
+                                        return (
 
-                                        </li>
+
+                                            <li key={index}>{item.link ? (<Link to={item.link}><li>{item.title}</li> </Link>) : (<li className='submenu-li'
+                                                onMouseEnter={() => setSubMenuIndex(subMenuIndex === index ? null : index)}
+                                                onMouseLeave={() => setSubMenuIndex(null)}
+                                            >{item.title} {subMenuIndex === index ? <IoIosArrowUp /> : <MdKeyboardArrowDown />}
+                                                {
+                                                    subMenuIndex === index && (<ul className='inner' >
+                                                        {
+                                                            item.submenu.map((subItem, subIndex) => {
+                                                                return (<li key={subIndex}
+
+                                                                ><Link to={subItem.link}>{subItem.title}</Link> </li>)
+                                                            })
+                                                        }
+                                                    </ul>)
+                                                }
+
+
+                                            </li>)}
+
+
+                                            </li>
                                         )
                                     })
 
